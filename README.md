@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NerdMint 🌟
 
-## Getting Started
+A modern Web3-enabled Next.js application that combines the power of blockchain technology with a sleek, responsive user interface.
 
-First, run the development server:
+## Features ✨
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Web3 Integration**: Built-in blockchain connectivity using Thirdweb
+- **Modern UI Components**: Custom-built components using Radix UI and Tailwind CSS
+- **Dark/Light Mode**: Built-in theme switching capability
+- **Responsive Design**: Mobile-first approach ensuring great UX across all devices
+- **TypeScript Support**: Full type safety throughout the application
+- **NFT Support**: Built-in NFT rendering and transaction capabilities
+
+## Tech Stack 🛠️
+
+- [Next.js 15.5](https://nextjs.org/) - React Framework
+- [React 19.1](https://react.dev/) - UI Library
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
+- [Thirdweb](https://thirdweb.com/) - Web3 Integration
+- [TypeScript](https://www.typescriptlang.org/) - Type Safety
+- [Radix UI](https://www.radix-ui.com/) - UI Components
+
+## Getting Started 🚀
+
+### Prerequisites
+
+- Node.js 18+ installed
+- npm or yarn package manager
+- MetaMask or another Web3 wallet
+
+## Project Structure 📁
+
+```
+├── public/          # Static assets
+├── src/
+│   ├── app/        # Next.js app directory
+│   ├── components/ # Reusable UI components
+│   └── lib/        #  Client setup
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Contributing 🤝
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
 
-## Learn More
+## License 📄
 
-To learn more about Next.js, take a look at the following resources:
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Made with ❤️ using Next.js and Web3 technology
