@@ -2,20 +2,17 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Sun, Moon, Zap, CodeXml, Cpu, Terminal } from "lucide-react";
 import {
   ConnectButton,
   lightTheme,
-  MediaRenderer,
   TransactionButton,
 } from "thirdweb/react";
 import { client } from "../lib/client";
 import { getContract } from "thirdweb";
 import { sepolia } from "thirdweb/chains";
-import { useReadContract } from "thirdweb/react";
-import { getContractMetadata } from "thirdweb/extensions/common";
 import { claimTo } from "thirdweb/extensions/erc721";
 import { useActiveAccount } from "thirdweb/react";
 
@@ -44,17 +41,11 @@ const mockNFTs = [
 
 export default function NerdMintLanding() {
   const [isDark, setIsDark] = useState(false);
-  const [isConnected, setIsConnected] = useState(false);
-  const [walletAddress, setWalletAddress] = useState("");
   const account = useActiveAccount();
   const contract = getContract({
     client,
     chain: sepolia,
     address: process.env.NEXT_PUBLIC_NFT_CONTRACT_ADDRESS as string,
-  });
-
-  const { data } = useReadContract(getContractMetadata, {
-    contract: contract,
   });
 
   useEffect(() => {
@@ -75,18 +66,6 @@ export default function NerdMintLanding() {
     }
   }, [isDark]);
 
-  const connectWallet = async () => {
-    try {
-      // Mock wallet connection
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      setIsConnected(true);
-      setWalletAddress("0x1234...5678");
-      alert("Wallet Connected! Successfully connected to your wallet.");
-    } catch (error) {
-      alert("Connection Failed. Failed to connect wallet. Please try again.");
-    }
-  };
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -97,11 +76,6 @@ export default function NerdMintLanding() {
           </div>
 
           <div className="flex items-center space-x-4">
-            {isConnected && (
-              <Badge variant="secondary" className="hidden sm:inline-flex">
-                {walletAddress}
-              </Badge>
-            )}
 
             <Button
               variant="outline"
